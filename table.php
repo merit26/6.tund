@@ -5,6 +5,9 @@ require_once("functions.php");
    if(isset($_GET["delete"])) {
 	   deleteCarData($_GET["delete"]);
    }
+   
+   if isset ($_GET["update"])) {
+   updateCarData($_GET["car_id"], $_GET["number_plate"],$_GET["color"])};
   $car_array = getAllData();
 
 ?> 
@@ -27,12 +30,15 @@ require_once("functions.php");
 		//kasutaja tahab rida muuta
 	if(isset($_GET["edit"])&& $_GET["edit"]==$car_array[$i]->id){
 		echo "<tr>";
+		echo "<form action='table.php' method='get'>";
+		echo input type='hidden' name 
 		echo "<td>".$car_array[$i]->id."</td>";  
         echo "<td>".$car_array[$i]->user_id."</td>";  
 	    echo "<td><input name='number_plate' value='".$car_array[$i]->number_plate."'</td>";  
 		echo "<td><input name='color' value='".$car_array[$i]->color."'</td>"; 
-		echo "<td><a href='?table.php=".$car_array[$i]->id."'>Katkesta</a></td>";  ///siia jäi mingi jama sisse
-	    echo "<td><a href='?update=".$car_array[$i]->id."'>Salvesta</a></td>";  
+		echo "<td><input name='update' type='submit'></td>";  
+		echo "<td><a href='?table.php'>cancel</a></td>";  ///siia jäi mingi jama sisse
+	    
 		echo"</tr>";
 	
 		}else{
