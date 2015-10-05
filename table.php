@@ -1,5 +1,10 @@
 <?php
 require_once("functions.php");
+
+   // kuulan, kas kasutaja tahab kustutada
+   if(isset($_GET["delete"])) {
+	   deleteCarData($_GET["delete"]);
+   }
   $car_array = getAllData();
 
 ?> 
