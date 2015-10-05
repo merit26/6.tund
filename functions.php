@@ -3,10 +3,8 @@
 //loome AB ühenduse
    require_once("../config_global.php");
    $database = "if15_merit26_1";
-  //paneme tööle sessiooni
-   session_start();
-
-			   function getAllData(){
+ 
+  function getAllData(){
 				   
 				 $mysqli = new mysqli($GLOBALS["servername"], $GLOBALS["server_username"], $GLOBALS["server_password"], $GLOBALS["database"]);  
 			   
