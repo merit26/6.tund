@@ -29,9 +29,13 @@
 					
 					//lisan massiivi
 					array_push($array, $car);
-					var_dump($array);
+					//echo "<pre>";
+					//var_dump($array);
+					//echo "</pre>";
+				}
+				return $array;	
 				   
-				}	
+					
 	       $stmt->close(); 
 		   $mysqli->close();      
 		   } 
