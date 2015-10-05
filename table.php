@@ -6,11 +6,11 @@ require_once("functions.php");
 	   deleteCarData($_GET["delete"]);
    }
    
-   if isset ($_GET["update"])) {
+   if(isset($_GET["update"])){
       updateCarData($_GET["car_id"], $_GET["number_plate"], $_GET["color"]);
-	  
+	}  
       $car_array = getAllData();
-   }
+   
 ?> 
 
  <h1>Tabel</h1> 
@@ -32,7 +32,7 @@ require_once("functions.php");
 	  if(isset($_GET["edit"])&& $_GET["edit"]==$car_array[$i]->id){
 		echo "<tr>";
 		echo "<form action='table.php' method='get'>";
-		echo input type='hidden' name='car_id' value='".$car_array[$i]->id."'>"; 
+		echo "<input type='hidden' name='car_id' value='".$car_array[$i]->id."'>"; 
 		echo "<td>".$car_array[$i]->id."</td>";  
         echo "<td>".$car_array[$i]->user_id."</td>";  
 	    echo "<td><input name='number_plate' value='".$car_array[$i]->number_plate."'></td>";  
