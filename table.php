@@ -1,6 +1,5 @@
-Siia tuleb tabel
 <?php
-require_once("functions.php")
+require_once("functions.php");
   $car_array = getAllData();
 
 ?> 
@@ -9,16 +8,24 @@ require_once("functions.php")
 <table>
 <tr>
     <th>id</th>
-	<th>Auto numbrimärk</th>
+	<th>kasutaja ID</th>
+	<th>Number</th>
+	<th>VÃ¤rv</th>
+	<th>Kustuta</th>
 </tr>  
  <?php
  
-      //autod ükshaaval läbi käia
+      //autod Ã¼kshaaval lÃ¤bi kÃ¤ia
     for($i = 0; $i < count($car_array); $i++){
     echo "<td>".$car_array[$i]->id."</td>";  
-    echo "<td>".$car_array[$i]->number_plate."</td>";  
+    echo "<td>".$car_array[$i]->user_id."</td>";  
+	echo "<td>".$car_array[$i]->number_plate."</td>";  
+	echo "<td>".$car_array[$i]->color."</td>"; 
+	echo "<td><a href='?delete=".$car_array[$i]->id."'>X</a></td>";  
     echo "</tr>"; 
-    }
+	
+   }
 	
   
 ?> 
+</table>
