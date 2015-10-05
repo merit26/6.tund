@@ -16,13 +16,18 @@
 				
 				
 				echo "</table border=1>";
-				echo"<tr><th>rea nr</th><th>auto nr märk</th></tr>"
+				echo"<tr><th>rea nr</th><th>auto nr märk</th></tr>";
 				
 				while($stmt->fetch()){
 					
-					echo "<tr><td>$row_nr</td><td>$number_plate_from_db</td></tr>";
+					echo "<tr>";
+					echo "<td>.$row_nr.</td>";
+					echo "<tr>";
+					echo "<td>.$number_plate_from_db.</td>";
+					echo "</tr>";
 					
-					($row_nr."".$number_plate_from_db." <br>");
+					
+					//($row_nr."".$number_plate_from_db." <br>");
 					$row_nr++;
 					
 					///  siit jätkame järgmisel korral.
