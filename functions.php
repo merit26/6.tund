@@ -13,28 +13,25 @@
 			   $stmt = $mysqli->prepare("SELECT id, user_id, number_plate, color FROM car_plates");
     		   $stmt -> bind_result($id_from_db, $user_id_from_db, $number_plate_from_db, $color_from_db);
 			   $stmt->execute();
+				// massiiv, kus hoiame autosid
+				$array = array();
 				
 				
-				echo "</table border=1>";
-				echo"<tr><th>rea nr</th><th>auto nr märk</th></tr>";
 				
 				while($stmt->fetch()){
+					//saime andmed kätte
+					//andmed saada transporditavale kujule
 					
-					echo "<tr>";
-					echo "<td>.$row_nr.</td>";
-					echo "<tr>";
-					echo "<td>.$number_plate_from_db.</td>";
-					echo "</tr>";
+					// suvaline muutuja, kus hoiame auto andmeid massiivi lisamiseni
+					$car = new StdClass();
+				    $car-> id = $id_from_db;
+				    $car-> number_plate = $number_plate_from_db;
 					
-					
-					//($row_nr."".$number_plate_from_db." <br>");
-					$row_nr++;
-					
-					///  siit jätkame järgmisel korral.
-					
-			   }
-			   
-			   echo"</table>";
+					//lisan massiivi
+					array_push($array, $car);
+					var_dump($array);
+				   
+				}	
 	       $stmt->close(); 
 		   $mysqli->close();      
 		   } 
